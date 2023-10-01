@@ -28,10 +28,11 @@ import ThemeRegistry from './components/ThemeRegistry/ThemeRegistry';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Header from './components/header/header';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata  = {
+export const metadata: Metadata = {
   title: 'Eventer',
   description: 'Next.js App Router + Material UI v5',
 };
@@ -42,7 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
         <ThemeRegistry>
-          {children}
+          <Header />
+            {children}
         </ThemeRegistry>
       </body>
     </html>
